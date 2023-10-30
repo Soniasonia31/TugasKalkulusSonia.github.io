@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <div class="bg-image"></div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <fieldset class="bg-text">
+
+        <head>
+            <title>TUGAS WEB</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+
+        <h1>Selamat Datang di Mini Web Kalkulus</h1>
+        <h2>Nama :Sonia</h2>
+        <h2>Nim : 411231086</h2>
+        <h2>Matkul: Kalkulus</h2>
+        <h2>Prodi: Teknik Informatika</h2>
+        <img src="images/undira.jpg">
+        <br />
+        <br />
+        <br />
+
+<body>
+    <center>
+        <fieldset>
+            <table>
+                <legend align="center">Persamaan Linear (ax+b = 0)</legend>
+                <table>
+                    <tr>
+                        <td><label for="nilaiA">Nilai a :</label>
+                            <input type="text" id="nilaiA" placeholder="Masukkan nilai a">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="nilaiB">Nilai b:</label>
+                            <input type="text" id="nilaiB" placeholder="Masukkan nilai b">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <button onclick="hitungPersamaanLinear()">Hitung (Linear)</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <p>Hasil : <label id="hasil"></div>
+
+                        </td>
+                    </tr>
+                </table>
+
+        </fieldset>
+    </center>
+
+    <script>
+        function hitungPersamaanLinear() {
+            var nilaiA = parseFloat(document.getElementById('nilaiA').value);
+            var nilaiB = parseFloat(document.getElementById('nilaiB').value);
+
+            if (isNaN(nilaiA) || isNaN(nilaiB)) {
+                document.getElementById('hasil').textContent = "Masukkan nilai yang valid untuk a dan b.";
+            } else {
+                if (nilaiA === 0) {
+                    document.getElementById('hasil').textContent = "Nilai a tidak boleh 0.";
+                } else {
+                    var hasilX = -nilaiB / nilaiA;
+                    document.getElementById('hasil').textContent = "Nilai x = " + hasilX;
+                }
+            }
+        }
+    </script>
+    <br />
+    <br />
+    <br>
+    <center>
+        <fieldset>
+            <table>
+                <legend align="center">Persamaan Kuadrat (ax²+bx+c=0) </legend>
+                <table>
+                    <tr>
+                        <td><label for="nilaiA">Nilai a :</label>
+                            <input type="text" id="inputA" placeholder="Masukkan nilai a">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="nilaiB">Nilai b:</label>
+                            <input type="text" id="inputB" placeholder="Masukkan nilai b">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="nilaiB">Nilai C:</label>
+                            <input type="text" id="inputC" placeholder="Masukkan nilai C">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <button onclick="hitungPersamaanKuadrat()">Hitung (Kuadrat)</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <p>Hasil : <label id="hasilKuadrat"></div>
+
+                        </td>
+                    </tr>
+                </table>
+
+        </fieldset>
+    </center>
+    <script>
+        function hitungPersamaanKuadrat() {
+            var a = parseFloat(document.getElementById("inputA").value);
+            var b = parseFloat(document.getElementById("inputB").value);
+            var c = parseFloat(document.getElementById("inputC").value);
+
+            var discriminant = b * b - 4 * a * c;
+
+            if (discriminant > 0) {
+                var x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                var x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                document.getElementById("hasilKuadrat").innerHTML = "Solusi x1 = " + x1 + " dan x2 = " + x2;
+            } else if (discriminant == 0) {
+                var x = -b / (2 * a);
+                document.getElementById("hasilKuadrat").innerHTML = "Solusi tunggal x = " + x;
+            } else {
+                document.getElementById("hasilKuadrat").innerHTML = "imajiner,tidak dapat di Selesaikan hasil akhir :" + discriminant;
+            }
+        }
+    </script>
+    <br />
+    <br />
+    <br />
+    <center>
+        <fieldset>
+            <table>
+                <legend align="center">PertidakSamaan Linear (ax+b ≠ 0)</legend>
+                <table>
+                    <tr>
+                        <td><label for="inputA">Nilai a :</label>
+                            <input type="text" id="NA" placeholder="Masukkan nilai a">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="inputB">Nilai b:</label>
+                            <input type="text" id="NB" placeholder="Masukkan nilai b">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <button onclick="solveEquation()">Hitung (Linear)</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>Hasil : <label id="result2"></div>
+                        </td>
+                    </tr>
+                </table>
+
+        </fieldset>
+    </center>
+   
+    <script>
+        function solveEquation() {
+            var a = parseFloat(document.getElementById("NA").value);
+            var b = parseFloat(document.getElementById("NB").value);
+
+            if (a === 0) {
+                alert("Nilai a tidak boleh sama dengan 0.");
+            } else {
+                var x = -b / a;
+                document.getElementById("result2").textContent = "x = " + x;
+            }
+        }
+    </script>
+    <br />
+    <br />
+    <br>
+    <center>
+        <fieldset>
+            <table>
+                <legend align="center">Pertidaksamaan Kuadrat (ax²+bx+c=0)</legend>
+                <table>
+                    <tr>
+                        <td><label for="nilaiA">Nilai a :</label>
+                            <input type="text" id="nilA" placeholder="Masukkan nilai a">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="nilaiB">Nilai b:</label>
+                            <input type="text" id="nilB" placeholder="Masukkan nilai b">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="nilaiB">Nilai C:</label>
+                            <input type="text" id="nilC" placeholder="Masukkan nilai C">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td> <button onclick="panggil()">Hitung (Kuadrat)</button></td>
+                    </tr>
+                    <tr>
+                        <td>
+
+                            <p>Hasil : <label id="result5"></div>
+
+                        </td>
+                    </tr>
+                </table>
+
+        </fieldset>
+    </center>
+    
+    <script>
+        function panggil() {
+            const a = parseFloat(document.getElementById("nilA").value);
+            const b = parseFloat(document.getElementById("nilB").value);
+            const c = parseFloat(document.getElementById("nilC").value);
+
+            const discriminant = b * b - 4 * a * c;
+
+            if (discriminant > 0) {
+                const root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+                const root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+                document.getElementById("result").textContent = "Akar-akar persamaan: x1 = " + root1 + ", x2 = " + root2;
+            } else if (discriminant === 0) {
+                const root = -b / (2 * a);
+                document.getElementById("result5").textContent = "Akar ganda: x = " + root;
+            } else {
+                document.getElementById("result5").textContent = "Tidak ada akar real,hasil Hitungnya :"+discriminant;
+            }
+        }
+    </script>
+
+</body>
+
+</html> 
